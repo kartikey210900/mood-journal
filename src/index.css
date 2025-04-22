@@ -1,0 +1,428 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap");
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+}
+
+/* Dark mode */
+html.dark body {
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.875rem;
+  font-weight: 700;
+}
+
+.toggle-button {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: #e2e8f0;
+  color: #1e293b;
+  border: none;
+  cursor: pointer;
+  font-size: 1.25rem;
+  transition: background-color 0.2s ease;
+}
+
+.toggle-button:hover {
+  background-color: #cbd5e1;
+}
+
+html.dark .toggle-button {
+  background-color: #475569;
+  color: #e2e8f0;
+}
+
+html.dark .toggle-button:hover {
+  background-color: #64748b;
+}
+
+/* Mood entry form */
+.mood-form {
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  animation: fadeIn 0.5s ease-in;
+}
+
+html.dark .mood-form {
+  background-color: #1e293b;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.mood-form h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.weather-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.weather-icon {
+  font-size: 1.5rem;
+}
+
+.weather-text {
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+html.dark .weather-text {
+  color: #94a3b8;
+}
+
+.mood-buttons {
+  margin-bottom: 1rem;
+}
+
+.mood-buttons h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.mood-button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.mood-button {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
+}
+
+.mood-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.mood-button.selected {
+  box-shadow: 0 0 0 2px #3b82f6;
+}
+
+html.dark .mood-button.selected {
+  box-shadow: 0 0 0 2px #60a5fa;
+}
+
+.note-section {
+  margin-bottom: 1rem;
+}
+
+.note-label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.note-textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  resize: vertical;
+  background-color: #ffffff;
+  color: #1e293b;
+  transition: border-color 0.2s ease;
+}
+
+.note-textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+html.dark .note-textarea {
+  background-color: #334155;
+  border-color: #475569;
+  color: #e2e8f0;
+}
+
+.save-button {
+  background-color: #3b82f6;
+  color: #ffffff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.save-button:hover {
+  background-color: #2563eb;
+}
+
+html.dark .save-button {
+  background-color: #2563eb;
+}
+
+html.dark .save-button:hover {
+  background-color: #1d4ed8;
+}
+
+.message {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: #16a34a;
+  animation: fadeIn 0.5s ease-in;
+}
+
+html.dark .message {
+  color: #4ade80;
+}
+
+/* Calendar view */
+.calendar-view {
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+html.dark .calendar-view {
+  background-color: #1e293b;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.calendar-header h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.calendar-controls {
+  display: flex;
+  gap: 1rem;
+}
+
+.filter-select {
+  padding: 0.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.375rem;
+  background-color: #ffffff;
+  color: #1e293b;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+html.dark .filter-select {
+  background-color: #334155;
+  border-color: #475569;
+  color: #e2e8f0;
+}
+
+.export-button {
+  background-color: #16a34a;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.export-button:hover {
+  background-color: #15803d;
+}
+
+html.dark .export-button {
+  background-color: #15803d;
+}
+
+html.dark .export-button:hover {
+  background-color: #166534;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.calendar-day {
+  border: 1px solid #e2e8f0;
+  border-radius: 0.375rem;
+  padding: 1rem;
+  background-color: #f8fafc;
+  display: flex;
+  gap: 1rem;
+  transition: background-color 0.3s ease;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.calendar-day:hover {
+  background-color: #e2e8f0;
+}
+
+html.dark .calendar-day {
+  background-color: #334155;
+  border-color: #475569;
+}
+
+html.dark .calendar-day:hover {
+  background-color: #475569;
+}
+
+.calendar-day .emoji {
+  font-size: 1.5rem;
+}
+
+.calendar-day .content {
+  flex: 1;
+}
+
+.calendar-day .date {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.calendar-day .note {
+  color: #64748b;
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+}
+
+html.dark .calendar-day .note {
+  color: #94a3b8;
+}
+
+.calendar-day .weather {
+  color: #6b7280;
+  font-size: 0.75rem;
+}
+
+html.dark .calendar-day .weather {
+  color: #9ca3af;
+}
+
+.no-entries {
+  color: #64748b;
+  font-size: 0.875rem;
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
+html.dark .no-entries {
+  color: #94a3b8;
+}
+
+/* Mood trend graph */
+.mood-graph {
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+html.dark .mood-graph {
+  background-color: #1e293b;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.mood-graph h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .container {
+    padding: 1rem;
+  }
+  .header h1 {
+    font-size: 1.5rem;
+  }
+  .mood-form h2,
+  .calendar-header h2,
+  .mood-graph h2 {
+    font-size: 1.125rem;
+  }
+  .calendar-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 2rem;
+  }
+}
