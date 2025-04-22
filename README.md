@@ -1,4 +1,4 @@
-# Mood Journal 🧠✨
+# Mood Journal 
 
 A simple and elegant mood tracking web application built with **React.js**.  
 
@@ -20,7 +20,7 @@ A simple and elegant mood tracking web application built with **React.js**.
 This project uses the **OpenWeather API**. Create a `.env` file in the root of your project and add the following:
 
 ```env
-REACT_APP_WEATHER_API_KEY=your_openweather_api_key_here
+VITE_OPENWEATHER_API_KEY=your_openweather_api_key_here
 ```
 ##  Features
 
